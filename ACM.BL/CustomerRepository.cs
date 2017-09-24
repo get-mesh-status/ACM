@@ -8,6 +8,8 @@ namespace ACM.BL
 {
    public class CustomerRepository
     {
+       // collaboration/composition relationship between 
+       // CustomerRepository and AddressRepository
        private AddressRepository addressRepository { get; set; }
 
        public CustomerRepository()
@@ -23,7 +25,7 @@ namespace ACM.BL
 
 
             // Temporary hard coded values to return 
-            // a populated customer
+            // a populated customer instance 
             if (customerId == 1)
             {
 

@@ -20,7 +20,7 @@ namespace ACM.BL
                 address.StreetLine2 = "Bagshot row";
                 address.City = "Hobbiton";
                 address.State = "Shire";
-                address.Country = "Midle Earth";
+                address.Country = "Middle Earth";
                 address.PostalCode = "144";
             }
             return address;

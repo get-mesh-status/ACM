@@ -23,7 +23,10 @@ namespace ACM.BL
             AddressList = new List<Address>();
         }
 
+        // composition to teh Address class
         public List<Address> AddressList { get; set; }
+
+        public int CustomerType { get; set; }
         //static modifier ,ensuring that InstanceCount
         // belong to the Type Customer itself
         public static int InstanceCount { get;  set; }

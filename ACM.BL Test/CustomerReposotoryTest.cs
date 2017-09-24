@@ -13,9 +13,9 @@ namespace ACM.BLTest
         {
             // arrange
             var customerRepository = new CustomerRepository();
-            var expected = new Customer(1)
+            var expected = new Customer(1) // setting the customer ID via overloaded Customer Constructor
             {
-                EmailAddress = "fbaggins@hobbbiton.me",
+                EmailAddress = "fbaggins@hobbiton.me",
                 FirstName = "Frodo",
                 LastName = "Baggins"
             };
@@ -23,7 +23,7 @@ namespace ACM.BLTest
             var actual = customerRepository.Retrieve(1);
             // assert
             // Assert.AreEqual(expected, actual);
-            Assert.AreEqual(expected.CustomerId, actual.CustomerId);
+           Assert.AreEqual(expected.CustomerId, actual.CustomerId);
             Assert.AreEqual(expected.EmailAddress, actual.EmailAddress);
             Assert.AreEqual(expected.FirstName, actual.FirstName);
             Assert.AreEqual(expected.LastName, actual.LastName);
