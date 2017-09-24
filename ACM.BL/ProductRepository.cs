@@ -12,6 +12,12 @@ namespace ACM.BL
         {
             Product product= new Product(productId);
 
+            Object myobject = new Object();
+            Console.WriteLine("Object instance:" + myobject.ToString());
+            Console.WriteLine("Product:" + product.ToString());
+
+           
+
             if (productId == 2)
             {
                 product.ProductName = "Sunflowers";
@@ -21,9 +27,24 @@ namespace ACM.BL
             return product;
         }
 
-        public bool Save()
+        public bool Save(Product product)
         {
-            return true;
+            var success = true;
+
+            if(product.HasChanges && product.IsValid)
+            {
+
+                if(product.IsNew)
+                {
+                    // call an insert stored procedure
+                }
+                else
+                {
+                    // call an update stored procedure
+                }
+
+            }
+            return success;
         }
 
 

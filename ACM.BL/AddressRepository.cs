@@ -56,7 +56,22 @@ namespace ACM.BL
         {
             // Code that saves the defined address
 
-            return true;
+            var success = true;
+
+            if (address.HasChanges && address.IsValid)
+            { 
+                if(address.IsNew)
+                {
+                    // call an insert stored procedure
+                }
+                else
+                {
+
+                    // call an update stored procedure
+                }
+            }
+
+            return success;
         }
     }
 }

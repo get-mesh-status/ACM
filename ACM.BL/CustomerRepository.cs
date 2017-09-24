@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-   public class CustomerRepository
+    public class CustomerRepository
     {
-       // collaboration/composition relationship between 
-       // CustomerRepository and AddressRepository
-       private AddressRepository addressRepository { get; set; }
+        // collaboration/composition relationship between 
+        // CustomerRepository and AddressRepository
+        private AddressRepository addressRepository { get; set; }
 
-       public CustomerRepository()
-       {
-           addressRepository = new AddressRepository();
-       }
+        public CustomerRepository()
+        {
+            addressRepository = new AddressRepository();
+        }
 
         public Customer Retrieve(int customerId)
         {
@@ -34,10 +34,10 @@ namespace ACM.BL
                 customer.LastName = "Baggins";
 
             }
-            
+
             // code that retrieves the defined customer
 
-            return customer; 
+            return customer;
         }
 
         public List<Customer> Retrieve()
@@ -49,8 +49,22 @@ namespace ACM.BL
         public bool Save(Customer customer)
         {
             // saves the defined customer
-            return true;
+            var success = true;
 
+            if (customer.HasChanges && customer.IsValid)
+            {
+
+                if (customer.IsNew)
+                { // call an insert stored procedure}
+
+                }
+                else
+                {
+                    //call an update stored procedure
+                }
+
+            }
+            return success;
         }
     }
 }

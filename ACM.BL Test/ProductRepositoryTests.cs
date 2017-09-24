@@ -18,7 +18,7 @@ namespace ACM.BL.Tests
             var expected = new Product(2)
             {
                 CurrentPrice = 15.96M,
-                ProductDescription = "Assorted Size Set of 4 Bright Yellow Mini Sunflowers",
+                ProductDescription = "Assorted size set of 4 bright yello mini sunflowers",
                 ProductName = "Sunflowers"
             };
 

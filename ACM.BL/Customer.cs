@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ACME.common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace ACM.BL
 {
     // callable from this solution and other outside, classes are also typed
     
-    public class Customer
+    public class Customer:EntityBase,ILogable
     {
 
         public Customer()
@@ -68,7 +69,7 @@ namespace ACM.BL
         }
 
        
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
@@ -82,6 +83,20 @@ namespace ACM.BL
             
             return isValid;
         }
-        
+
+        public override string ToString()
+        {
+            return FullName;
+        }
+        public string Log()
+        {
+            var logString = this.CustomerId + ": " +
+                           this.FullName + " " +
+                           "Email: " + this.EmailAddress + "'" +
+                           "Status: " + this.EntityState.ToString();
+
+            return logString;
+
+        }
     }
 }
